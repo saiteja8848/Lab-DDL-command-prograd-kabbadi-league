@@ -70,15 +70,30 @@ PLAYER_OF_MATCH INT
 
 
 -- 12. **Create table game**
-
+CREATE TABLE GAME(ID INT PRIMARY KEY,
+                 GAME_DATE DATE,
+                 TEAM_ID_1 INT REFERENCES TEAM(ID),
+                 TEAM_ID_2 INT REFERENCES TEAM(ID),
+                 VENUE_ID INT REFERENCES VENUE(ID),
+                 OUTCOME_ID INT REFERENCES OUTCOME(ID),
+                 REFEREE_ID_1 INT REFERENCES REFREE(ID),
+                 REFEREE_ID_2 INT REFERENCES REFREE(ID),
+                 FIRST_INNINGS_ID INT REFERENCES INNINGS(ID),
+                 SECOND_INNINGS_ID INT REFERENCES INNINGS(ID)                          
+);
 
 
 
 
 -- 13. **Drop table city**
+DROP TABLE CITY;
 
 -- 14. **Drop table innings**
+DROP TABLE INNINGS;
+
 
 -- 15. **Drop table skill**
+DROP TABLE SKILL;
 
 -- 16. **Drop table extra_type**
+DROP TABLE EXTRA_TYPE;
